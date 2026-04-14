@@ -64,8 +64,6 @@ Cuando selecciones habilidades para el plan de pruebas, elige de la siguiente li
 - `run-tests-browser`
 - `run-accessibility-tests`
 - `run-lighthouse-tests`
-- `run-visual-tests`
-- `run-analytics-tests`
 - `generate-automated-tests`
 
 ## Salida
