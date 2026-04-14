@@ -1,6 +1,8 @@
-# QA Agent Udemy
+# QA Agent GeekQA
 
-Este proyecto es un agente de QA que organiza y ejecuta pruebas para apps web. El agente usa skills de diagnóstico, pruebas exploratorias, pruebas en navegador, accesibilidad y generación de reportes, y se apoya en configuraciones y flujos definidos en `.gemini`. Esto es un recurso que se explica en el curso de Ai-powered-QA que puedes encontrar aquí https://www.udemy.com/course/ai-powered-qa-automatizacion-y-agentes-inteligentes-en-qe/ 
+Este proyecto es un agente de QA prototipo que planea, diseña  y ejecuta pruebas para apps web en el navegador. El agente usa skills de QA, pruebas exploratorias, pruebas de accesibilidad y generación de reportes, y se apoya en configuraciones y flujos definidos en GEMINI.md `.gemini`. 
+
+Esto es un recurso  que se explica en el curso de Ai-powered-QA que puedes encontrar en Udemy aquí https://www.udemy.com/course/ai-powered-qa-automatizacion-y-agentes-inteligentes-en-qe/ 
 
 ## Prerrequisitos
 
