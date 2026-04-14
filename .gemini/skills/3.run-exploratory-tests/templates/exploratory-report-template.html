@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Prueba Exploratoria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .meta-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .meta-item label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .meta-item p {
+            font-size: 0.95em;
+            word-break: break-all;
+        }
+
+        .content {
+            padding: 40px 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-left: 5px solid #667eea;
+            border-radius: 3px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1.5em;
+            background-color: #667eea;
+            margin-right: 10px;
+        }
+
+        .executive-summary {
+            background-color: #e3f2fd;
+            border-left-color: #2196f3;
+            padding: 25px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .summary-icon {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .success { background-color: #4caf50; }
+        .warning { background-color: #ff9800; }
+        .error { background-color: #f44336; }
+        .info { background-color: #2196f3; }
+
+        .errors-section {
+            background-color: #ffebee;
+            border-left-color: #f44336;
+        }
+
+        .error-item {
+            background-color: white;
+            border: 1px solid #ffcdd2;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 3px;
+            border-left: 4px solid #f44336;
+        }
+
+        .error-severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-right: 10px;
+        }
+
+        .severity-error { background-color: #f44336; color: white; }
+        .severity-warning { background-color: #ff9800; color: white; }
+        .severity-info { background-color: #2196f3; color: white; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        thead {
+            background-color: #667eea;
+            color: white;
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tbody tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .content-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .content-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .content-list li:last-child {
+            border-bottom: none;
+        }
+
+        .content-list li::before {
+            content: '▶';
+            color: #667eea;
+            margin-right: 15px;
+            font-size: 0.8em;
+            min-width: 15px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            font-size: 0.95em;
+            color: #666;
+            background-color: #fafafa;
+        }
+
+        .conclusions {
+            background-color: #f3e5f5;
+            border-left-color: #9c27b0;
+        }
+
+        .finding {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 3px;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .finding strong {
+            color: #9c27b0;
+        }
+
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ENCABEZADO -->
+        <div class="header">
+            <h1>🔍 Reporte de Prueba Exploratoria</h1>
+            <div class="header-meta">
+                <div class="meta-item">
+                    <label>URL Probada:</label>
+                    <p>{{URL}}</p>
+                </div>
+                <div class="meta-item">
+                    <label>Título de Página:</label>
+                    <p>{{PAGE_TITLE}}</p>
+                </div>
+                <div class="meta-item">
+                    <label>Fecha y Hora:</label>
+                    <p>{{TIMESTAMP}}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="content">
+            <!-- RESUMEN EJECUTIVO -->
+            <div class="section executive-summary">
+                <h2>Resumen Ejecutivo</h2>
+                <div class="summary-item">
+                    <div class="summary-icon info">✓</div>
+                    <div>
+                        <strong>Estado General:</strong> {{OVERALL_STATUS}}<br>
+                        {{SUMMARY_DESCRIPTION}}
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-icon {{AUTH_ICON_CLASS}}">●</div>
+                    <div>
+                        <strong>Autenticación:</strong> {{AUTH_STATUS}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- ERRORES DE CONSOLA -->
+            {{#if CONSOLE_ERRORS}}
+            <div class="section errors-section">
+                <h2>Errores de Consola</h2>
+                {{#each CONSOLE_ERRORS}}
+                <div class="error-item">
+                    <span class="error-severity severity-{{SEVERITY}}">{{SEVERITY}}</span>
+                    <strong>{{MESSAGE}}</strong>
+                    {{#if SOURCE}}<br><small>Fuente: {{SOURCE}}</small>{{/if}}
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+
+            <!-- ENCABEZADOS IDENTIFICADOS -->
+            {{#if HEADINGS}}
+            <div class="section">
+                <h2>Encabezados Identificados</h2>
+                <ul class="content-list">
+                    {{#each HEADINGS}}
+                    <li>
+                        <strong>{{TAG}}:</strong> {{TEXT}}
+                    </li>
+                    {{/each}}
+                </ul>
+                <p><small>Total: {{HEADINGS.length}} encabezados encontrados</small></p>
+            </div>
+            {{/if}}
+
+            <!-- IMÁGENES DETECTADAS -->
+            {{#if IMAGES}}
+            <div class="section">
+                <h2>Imágenes Detectadas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fuente (SRC)</th>
+                            <th>Texto Alternativo (ALT)</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each IMAGES}}
+                        <tr>
+                            <td><code>{{SRC}}</code></td>
+                            <td>{{ALT}}</td>
+                            <td>{{#if BROKEN}}<span class="error">✗ Rota</span>{{else}}<span class="success">✓ OK</span>{{/if}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <p><small>Total: {{IMAGES.length}} imágenes, {{BROKEN_COUNT}} rotas</small></p>
+            </div>
+            {{/if}}
+
+            <!-- VIDEOS DETECTADOS -->
+            {{#if VIDEOS}}
+            <div class="section">
+                <h2>Videos Detectados</h2>
+                <ul class="content-list">
+                    {{#each VIDEOS}}
+                    <li><code>{{SRC}}</code></li>
+                    {{/each}}
+                </ul>
+                <p><small>Total: {{VIDEOS.length}} videos</small></p>
+            </div>
+            {{/if}}
+
+            <!-- ELEMENTOS INTERACTIVOS -->
+            {{#if INTERACTIVE_ELEMENTS}}
+            <div class="section">
+                <h2>Elementos Interactivos</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Texto/Etiqueta</th>
+                            <th>Destino/Atributo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each INTERACTIVE_ELEMENTS}}
+                        <tr>
+                            <td><strong>{{TYPE}}</strong></td>
+                            <td>{{TEXT}}</td>
+                            <td><code>{{HREF_OR_ATTRIBUTE}}</code></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <p><small>Total: {{INTERACTIVE_ELEMENTS.length}} elementos interactivos</small></p>
+            </div>
+            {{/if}}
+
+            <!-- INTERACCIONES REALIZADAS -->
+            {{#if INTERACTIONS}}
+            <div class="section">
+                <h2>Interacciones Realizadas</h2>
+                <ul class="content-list">
+                    {{#each INTERACTIONS}}
+                    <li>
+                        <strong>[{{TIMESTAMP}}]</strong> {{ACTION}}<br>
+                        <small>{{RESULT}}</small>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/if}}
+
+            <!-- EVIDENCIA VISUAL -->
+            {{#if SCREENSHOTS}}
+            <div class="section">
+                <h2>Evidencia Visual</h2>
+                <div class="gallery">
+                    {{#each SCREENSHOTS}}
+                    <div class="gallery-item">
+                        <img src="{{PATH}}" alt="{{CAPTION}}">
+                        <div class="gallery-caption">{{CAPTION}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+
+            <!-- CONCLUSIONES -->
+            <div class="section conclusions">
+                <h2>Conclusiones y Hallazgos Clave</h2>
+                <div class="finding">
+                    <strong>Hallazgos Funcionales:</strong><br>
+                    {{FUNCTIONAL_FINDINGS}}
+                </div>
+                <div class="finding">
+                    <strong>Áreas de Riesgo:</strong><br>
+                    {{RISK_AREAS}}
+                </div>
+                <div class="finding">
+                    <strong>Recomendaciones para Pruebas Adicionales:</strong><br>
+                    {{RECOMMENDATIONS}}
+                </div>
+            </div>
+        </div>
+
+        <!-- PIE DE PÁGINA -->
+        <div class="footer">
+            <p>Generado automáticamente por QA Agent - Prueba Exploratoria</p>
+            <p>{{TIMESTAMP}}</p>
+        </div>
+    </div>
+</body>
+</html>

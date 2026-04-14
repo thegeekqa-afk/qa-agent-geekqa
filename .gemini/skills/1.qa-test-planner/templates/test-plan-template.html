@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Pruebas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+        .header {
+            background: linear-gradient(45deg, #1e88e5, #0d47a1);
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        h2 {
+            color: #1e88e5;
+            border-bottom: 2px solid #1e88e5;
+            padding-bottom: 12px;
+            margin-top: 45px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 18px;
+            text-align: left;
+        }
+        th {
+            background-color: #e3f2fd;
+            font-weight: 700;
+            color: #0d47a1;
+            font-size: 16px;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #e9ecef;
+        }
+        p {
+            line-height: 1.9;
+            font-size: 16px;
+        }
+        a {
+            color: #1e88e5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #0d47a1;
+        }
+        strong {
+            color: #0d47a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Plan de Pruebas: {{ticket_number}} / {{user_story_title}}</h1>
+        </div>
+        
+        <h2>Resumen Ejecutivo</h2>
+        <p>{{executive_summary}}</p>
+        
+        <h2>URLs/Endpoints a Probar</h2>
+        <a href="{{url_or_endpoints}}" target="_blank">{{url_or_endpoints}}</a>
+        
+        <p><strong>Fecha y Hora:</strong> {{date_time}}</p>
+        
+        <h2>Análisis de Riesgos de Prueba</h2>
+        <p>{{test_risk_analysis}}</p>
+
+        <h2>Activos Analizados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Activo</th>
+                    <th>Relación con la Historia de Usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each analyzed_assets}}
+                <tr>
+                    <td><a href="{{this.path}}" target="_blank">{{this.name}}</a></td>
+                    <td>{{this.relation}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        
+        <h2>Escenarios de Prueba</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descripción</th>
+                    <th>Tipo de Prueba</th>
+                    <th>Criterios de Aceptación Cubiertos</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{test_scenarios}}
+            </tbody>
+        </table>
+        
+        <h2>Recomendaciones Tempranas para Desarrolladores</h2>
+        <p>{{early_recommendations}}</p>
+        
+        <h2>Skills a Ejecutar</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Skill</th>
+                    <th>Justificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{skills_to_be_executed}}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

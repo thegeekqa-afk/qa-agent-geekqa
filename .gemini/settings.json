@@ -1,0 +1,56 @@
+{
+ "general": {
+    "model": "gemini-3-flash",
+    "temperature": 0.1,
+    "auto_edit": true,
+    "tools": {
+     
+    },
+    "defaultApprovalMode": "auto_edit"
+  },
+
+   "allowedPaths": [
+    "./",
+    "../",
+    "/Users",
+    "/workspace"
+  ],
+ "execution": {
+    "verbosity": "minimal",
+    "reasoning": "hidden",
+    "toolNarration": false
+  },
+   "agent": {
+    "maxSteps": 20,
+    "parallelTools": true
+  },
+
+  "mcpServers": {
+    "playwright-chromium": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@0.0.68"
+      ]
+    },
+    "playwright-firefox": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@0.0.68",
+        "--browser",
+        "firefox"
+      ]
+    },
+    "playwright-webkit": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@0.0.68",
+        "--browser",
+        "webkit"
+      ]
+    }
+  
+  }
+}
