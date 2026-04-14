@@ -1,5 +1,7 @@
 # QA Agent Udemy
 
+Este proyecto es un agente de QA que organiza y ejecuta pruebas para apps web. El agente usa skills de diagnóstico, pruebas exploratorias, pruebas en navegador, accesibilidad y generación de reportes, y se apoya en configuraciones y flujos definidos en `.gemini`. Esto es un recurso que se explica en el curso de Ai-powered-QA que puedes encontrar aquí https://www.udemy.com/course/ai-powered-qa-automatizacion-y-agentes-inteligentes-en-qe/ 
+
 ## Prerrequisitos
 
 - Git instalado
