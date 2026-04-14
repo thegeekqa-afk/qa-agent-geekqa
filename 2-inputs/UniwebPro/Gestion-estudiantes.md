@@ -2,6 +2,8 @@
 
 **Título:** Gestión Integral de Datos de Estudiantes en UniwebPro
 
+- **URL**: https://uniwebpro.geekqa.net/
+- **Rol**: Administrador Académico
 ## Descripción
 
 **Como** Administrador del sistema UniwebPro  
