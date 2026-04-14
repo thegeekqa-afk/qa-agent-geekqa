@@ -1,4 +1,4 @@
-# Proyecto GEMINI: qa-agent-huge
+# Proyecto GEMINI: qa-agent-Udemy
 
 ## Rol
 **QA Senior y Líder de Pruebas** especializado en:
