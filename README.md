@@ -1,13 +1,22 @@
 # QA Agent GeekQA
 
-Este proyecto es un agente de QA prototipo que planea, diseña  y ejecuta pruebas para apps web en el navegador. El agente usa skills de QA, pruebas exploratorias, pruebas de accesibilidad y generación de reportes, y se apoya en configuraciones y flujos definidos en GEMINI.md `.gemini`. 
+Este repositorio contiene un prototipo de agente de QA orientado a validar aplicaciones web mediante Playwright, accesibilidad y reportes automatizados. El flujo está guiado por las instrucciones de [GEMINI.md](GEMINI.md) y por la configuración de [.gemini/mcp_config.json](.gemini/mcp_config.json).
 
-Esto es un recurso  que se explica en el curso de Ai-powered-QA que puedes encontrar en Udemy aquí https://www.udemy.com/course/ai-powered-qa-automatizacion-y-agentes-inteligentes-en-qe/ 
+Este recurso forma parte del curso de IA para QA y automatización disponible en Udemy: https://www.udemy.com/course/ai-powered-qa-automatizacion-y-agentes-inteligentes-en-qe/
 
-## Prerrequisitos
+## Qué incluye este proyecto
+
+- Planificación de pruebas basada en historias de usuario.
+- Ejecución de pruebas funcionales, accesibilidad y Lighthouse.
+- Generación de artefactos en carpetas estructuradas bajo [3-outputs](3-outputs).
+- Integración con Antigravity CLI y servidores MCP de Playwright.
+
+## Requisitos previos
 
 - Git instalado
-- Node.js instalado (recomendado 16+)
+- Node.js 18+ recomendado
+- npm
+- Antigravity CLI instalado
 - Acceso a la terminal o PowerShell
 
 ## Instalación
@@ -20,21 +29,41 @@ Esto es un recurso  que se explica en el curso de Ai-powered-QA que puedes encon
    ```bash
    cd qa-agent-udemy
    ```
-3. Instala dependencias si el proyecto usa Node.js (verificar `package.json`):
-   ```bash
-   npm install
+
    ```
 
-## Setup
+## Estructura del proyecto
 
-- Revisa la carpeta `2-inputs/` para los datos de entrada y `3-outputs/` para resultados generados.
-- Si hay configuración específica en `.gemini`, deja esa carpeta tal cual para que se suba a GitHub.
+- [2-inputs](2-inputs): archivos de entrada, historias de usuario y materiales de contexto.
+- [3-outputs](3-outputs): resultados generados por el flujo de QA.
+- [.gemini](.gemini): configuración de Antigravity y MCP.
+- [GEMINI.md](GEMINI.md): instrucciones principales para el agente.
 
-## Uso
+## Uso recomendado
 
-- Abre el proyecto en tu editor favorito.
-- Ejecuta los scripts o comandos que correspondan según el stack del proyecto.
+1. Prepara la entrada en [2-inputs](2-inputs).
+2. Asegura que [GEMINI.md](GEMINI.md) y [.gemini/mcp_config.json](.gemini/mcp_config.json) estén presentes.
+3. Desde la raíz del proyecto, ejecuta Antigravity CLI:
+   ```bash
+   agy --dangerously-skip-permissions
+   ```
+4. El agente leerá las instrucciones y generará resultados en [3-outputs/run](3-outputs/run).
+
+## Salida esperada
+
+Los artefactos de QA se almacenan normalmente en carpetas por story o caso, por ejemplo:
+
+- [3-outputs/run](3-outputs/run)/{story-id}/planning
+- [3-outputs/run](3-outputs/run)/{story-id}/execution
+- [3-outputs/run](3-outputs/run)/{story-id}/accessibility
+- [3-outputs/run](3-outputs/run)/{story-id}/bugs
+- [3-outputs/run](3-outputs/run)/{story-id}/test-report.html
 
 ## Notas
 
-- El archivo `.gitignore` se ha ajustado para que la carpeta `.gemini` no se ignore y pueda subirse a GitHub.
+- La carpeta [.gemini](.gemini) se mantiene en el repositorio para que Antigravity pueda leer la configuración del proyecto.
+- Si tu entorno requiere permisos adicionales, usa el comando mostrado arriba con la bandera correspondiente.
+
+## Copyright
+
+Recurso creado por GeekQA con fines educativos.

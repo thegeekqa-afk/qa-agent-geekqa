@@ -1,30 +1,27 @@
 {
- "general": {
-    "model": "gemini-3-flash",
+  "general": {
+    "model": "gemini-2.5-flash",
     "temperature": 0.1,
     "auto_edit": true,
-    "tools": {
-     
-    },
+    "tools": {},
     "defaultApprovalMode": "auto_edit"
   },
-
-   "allowedPaths": [
+  "allowedPaths": [
     "./",
-    "../",
-    "/Users",
-    "/workspace"
+    "./2-inputs",
+    "./3-outputs",
+    "./.gemini"
+  
   ],
- "execution": {
+  "execution": {
     "verbosity": "minimal",
     "reasoning": "hidden",
     "toolNarration": false
   },
-   "agent": {
+  "agent": {
     "maxSteps": 20,
     "parallelTools": true
   },
-
   "mcpServers": {
     "playwright-chromium": {
       "command": "npx",
@@ -51,6 +48,5 @@
         "webkit"
       ]
     }
-  
   }
 }
