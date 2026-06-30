@@ -18,6 +18,7 @@ Este recurso forma parte del curso de IA para QA y automatización disponible en
 - npm
 - Antigravity CLI instalado
 - Acceso a la terminal o PowerShell
+- 1 + mas cuentas de correo de Gmail para autenticación en Antigravity CLI
 
 ## Instalación
 
@@ -27,10 +28,9 @@ Este recurso forma parte del curso de IA para QA y automatización disponible en
    ```
 2. Entra en la carpeta del proyecto:
    ```bash
-   cd qa-agent-udemy
+   cd qa-agent-geekqa
    ```
 
-   ```
 
 ## Estructura del proyecto
 
@@ -47,7 +47,8 @@ Este recurso forma parte del curso de IA para QA y automatización disponible en
    ```bash
    agy --dangerously-skip-permissions
    ```
-4. El agente leerá las instrucciones y generará resultados en [3-outputs/run](3-outputs/run).
+4. realice setup inicial de Antgravity, permisos etc y autenticatión con tu cuenta de correo de Gmail
+5. El agente leerá las instrucciones y generará resultados en [3-outputs/run](3-outputs/run).
 
 ## Salida esperada
 
