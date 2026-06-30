@@ -14,7 +14,7 @@ Como Administrador Académico quiero poder crear, visualizar y eliminar materias
 
 * Dado que el administrador hace clic en el botón "+ Nueva Materia".
 * Entonces se debe mostrar un modal con un formulario completo.
-* Y el formulario debe solicitar: Nombre, Código, Créditos, Semestre, Carrera (menú desplegable) y Descripción.
+* Y el formulario debe solicitar: Nombre, Código, Créditos, ID profesor, Semestre, Carrera (menú desplegable), y Descripción.
 * Cuando el administrador completa los datos requeridos y presiona "Registrar".
 * Entonces la nueva materia debe guardarse y aparecer reflejada inmediatamente en la lista general.
 

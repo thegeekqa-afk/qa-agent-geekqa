@@ -7,11 +7,10 @@
     "defaultApprovalMode": "auto_edit"
   },
   "allowedPaths": [
-    "./",
-    "./2-inputs",
-    "./3-outputs",
-    "./.gemini"
-  
+    "../",
+    "../2-inputs",
+    "../3-outputs",
+    "../test-results"
   ],
   "execution": {
     "verbosity": "minimal",
@@ -27,14 +26,14 @@
       "command": "npx",
       "args": [
         "-y",
-        "@playwright/mcp@0.0.68"
+         "@playwright/mcp@latest"
       ]
     },
     "playwright-firefox": {
       "command": "npx",
       "args": [
         "-y",
-        "@playwright/mcp@0.0.68",
+        "@playwright/mcp@latest",
         "--browser",
         "firefox"
       ]
@@ -43,7 +42,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "@playwright/mcp@0.0.68",
+        "@playwright/mcp@latest",
         "--browser",
         "webkit"
       ]
