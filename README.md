@@ -36,7 +36,7 @@ Este recurso forma parte del curso de IA para QA y automatización disponible en
 
 - [2-inputs](2-inputs): archivos de entrada, historias de usuario y materiales de contexto.
 - [3-outputs](3-outputs): resultados generados por el flujo de QA.
-- [.agent](.gemini): configuración de Antigravity y MCP.
+- [.agents]: configuración de Antigravity, skills y MCP.
 - [GEMINI.md](GEMINI.md): instrucciones principales para el agente.
 
 ## Uso recomendado
@@ -60,10 +60,6 @@ Los artefactos de QA se almacenan normalmente en carpetas por story o caso, por 
 - [3-outputs/run](3-outputs/run)/{story-id}/bugs
 - [3-outputs/run](3-outputs/run)/{story-id}/test-report.html
 
-## Notas
-
-- La carpeta [.gemini](.gemini) se mantiene en el repositorio para que Antigravity pueda leer la configuración del proyecto.
-- Si tu entorno requiere permisos adicionales, usa el comando mostrado arriba con la bandera correspondiente.
 
 ## Copyright
 
