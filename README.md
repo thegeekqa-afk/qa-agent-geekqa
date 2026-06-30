@@ -36,7 +36,7 @@ Este recurso forma parte del curso de IA para QA y automatización disponible en
 
 - [2-inputs](2-inputs): archivos de entrada, historias de usuario y materiales de contexto.
 - [3-outputs](3-outputs): resultados generados por el flujo de QA.
-- [.gemini](.gemini): configuración de Antigravity y MCP.
+- [.agent](.gemini): configuración de Antigravity y MCP.
 - [GEMINI.md](GEMINI.md): instrucciones principales para el agente.
 
 ## Uso recomendado
