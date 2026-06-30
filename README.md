@@ -51,14 +51,14 @@ Este recurso forma parte del curso de IA para QA y automatización disponible en
 5. Puedes correr el flujo de QA E2E para una historia de usuario de esta manera:
   
    ```bash
-   Ejecuta todo el flujo de QA para la historia de usuario de la carpeta input/XYZ
+   Ejecuta todo el flujo de QA para la historia de usuario de la carpeta (nombre carpeta)
    ```
 6. Puedes correr solo uno de los skills del agente si deseas,  así:
   
-   ```bash
+ 
   Ejecuta el skill de run-exploratory-test para el sitio en esta url http://geeqak.net
   
-   ```   
+
 7. El agente leerá las instrucciones y prompts y generará resultados en [3-outputs/run](3-outputs/run).
 
 ## Salida esperada
