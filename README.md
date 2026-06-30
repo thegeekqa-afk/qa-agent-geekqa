@@ -1,6 +1,6 @@
 # QA Agent GeekQA
 
-Este repositorio contiene un prototipo de agente de QA orientado a validar aplicaciones web mediante Playwright, accesibilidad y reportes automatizados. El flujo está guiado por las instrucciones de [GEMINI.md](GEMINI.md) y por la configuración de [.gemini/mcp_config.json](.gemini/mcp_config.json).
+Este repositorio contiene un prototipo de agente de QA orientado a analizar, diseñar, ejecutar pruebas sobre una  aplicaciones web mediante Playwright MCP, accesibilidad y reportes de bugs automatizados. El flujo está guiado por las instrucciones de [GEMINI.md](GEMINI.md) y por la configuración de [.agents/mcp_config.json].
 
 Este recurso forma parte del curso de IA para QA y automatización disponible en Udemy: https://www.udemy.com/course/ai-powered-qa-automatizacion-y-agentes-inteligentes-en-qe/
 
@@ -42,13 +42,21 @@ Este recurso forma parte del curso de IA para QA y automatización disponible en
 ## Uso recomendado
 
 1. Prepara la entrada en [2-inputs](2-inputs).
-2. Asegura que [GEMINI.md](GEMINI.md) y [.gemini/mcp_config.json](.gemini/mcp_config.json) estén presentes.
+2. Asegura que [GEMINI.md] y [.agents/mcp_config.json] estén presentes.
 3. Desde la raíz del proyecto, ejecuta Antigravity CLI:
    ```bash
    agy --dangerously-skip-permissions
    ```
 4. realice setup inicial de Antgravity, permisos etc y autenticatión con tu cuenta de correo de Gmail
-5. El agente leerá las instrucciones y generará resultados en [3-outputs/run](3-outputs/run).
+5. Puedes correr el flujo de QA E2E para una historia de usuario de esta manera:
+   ```bash
+   Ejecuta todo el flujo de QA para la historia de usuario de la carpeta input/XYZ
+   ```
+6. Puedes correr solo uno de los skills del agente si deseas,  así:
+   ```bash
+  Ejecuta el skill de run-exploratory-test para el sitio en esta url http://geeqak.net
+   ```   
+7. El agente leerá las instrucciones y prompts y generará resultados en [3-outputs/run](3-outputs/run).
 
 ## Salida esperada
 
@@ -64,3 +72,4 @@ Los artefactos de QA se almacenan normalmente en carpetas por story o caso, por 
 ## Copyright
 
 Recurso creado por GeekQA con fines educativos.
+www.geekqa.net
